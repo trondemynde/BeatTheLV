@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd1o1u4gi5hvn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llr8q"]
+size = Vector2(41, 649)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glf1p"]
+size = Vector2(1155, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nupxj"]
+size = Vector2(126, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbi2v"]
+size = Vector2(218, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jatq2"]
+size = Vector2(20, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fce8x"]
+size = Vector2(18, 140)
+
+[node name="room_1" type="Node2D"]
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2(19.5, 324.5)
+shape = SubResource("RectangleShape2D_llr8q")
+
+[node name="ColorRect5" type="ColorRect" parent="walls/StaticBody2D"]
+offset_left = -2.0
+offset_top = 615.0
+offset_right = 1152.0
+offset_bottom = 650.0
+color = Color(0.493545, 0.493546, 0.493546, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="walls"]
+position = Vector2(1110, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D2"]
+position = Vector2(19.5, 324.5)
+shape = SubResource("RectangleShape2D_llr8q")
+
+[node name="ColorRect3" type="ColorRect" parent="walls/StaticBody2D2"]
+visibility_layer = 2
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 38.0
+offset_bottom = 646.0
+color = Color(0.493545, 0.493546, 0.493546, 1)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="walls"]
+position = Vector2(538, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D3"]
+position = Vector2(36.5, 1.5)
+shape = SubResource("RectangleShape2D_glf1p")
+
+[node name="ColorRect4" type="ColorRect" parent="walls/StaticBody2D3"]
+offset_left = -538.0
+offset_top = -16.0
+offset_right = 616.0
+offset_bottom = 19.0
+color = Color(0.493545, 0.493546, 0.493546, 1)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="walls"]
+position = Vector2(538, 631)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D4"]
+position = Vector2(34, 4)
+shape = SubResource("RectangleShape2D_glf1p")
+
+[node name="ColorRect2" type="ColorRect" parent="walls/StaticBody2D4"]
+offset_left = -538.0
+offset_top = -629.0
+offset_right = -498.0
+offset_bottom = 20.0
+color = Color(0.493545, 0.493546, 0.493546, 1)
+
+[node name="floor" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="floor"]
+offset_left = 40.0
+offset_top = 34.0
+offset_right = 1105.0
+offset_bottom = 618.0
+color = Color(0.2484, 0.2484, 0.2484, 1)
+
+[node name="Doors" type="Node2D" parent="."]
+top_level = true
+
+[node name="DoorTop" type="Area2D" parent="Doors"]
+position = Vector2(551, 48)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorTop"]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_nupxj")
+
+[node name="DoorBottom" type="Area2D" parent="Doors"]
+position = Vector2(567, 606)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorBottom"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_sbi2v")
+
+[node name="DoorRight" type="Area2D" parent="Doors"]
+position = Vector2(1103, 323)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorRight"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_jatq2")
+
+[node name="DoorLeft" type="Area2D" parent="Doors"]
+position = Vector2(51, 310)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorLeft"]
+position = Vector2(1, 8)
+shape = SubResource("RectangleShape2D_fce8x")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 426.0
+offset_top = 189.0
+offset_right = 466.0
+offset_bottom = 212.0
+text = "Rooom 1"

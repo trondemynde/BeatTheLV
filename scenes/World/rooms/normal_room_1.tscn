@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbwvh4isx2bgq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv2sx"]
+size = Vector2(38, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gep5v"]
+size = Vector2(1185, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgvtw"]
+size = Vector2(225, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57uou"]
+size = Vector2(26, 182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnfuy"]
+size = Vector2(243, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3vlm"]
+size = Vector2(26, 151)
+
+[node name="normal_room_1" type="Node2D"]
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+offset_left = 37.0
+offset_top = 32.0
+offset_right = 1154.0
+offset_bottom = 618.0
+color = Color(0.235919, 0.362092, 0.496403, 1)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls"]
+
+[node name="ColorRect" type="ColorRect" parent="Walls/LeftWall"]
+offset_right = 40.0
+offset_bottom = 646.0
+color = Color(0.450648, 0.450648, 0.450648, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall"]
+position = Vector2(20, 323.5)
+shape = SubResource("RectangleShape2D_vv2sx")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls"]
+position = Vector2(1152, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Walls/RightWall"]
+offset_right = 40.0
+offset_bottom = 646.0
+color = Color(0.450648, 0.450648, 0.450648, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
+position = Vector2(20, 323.5)
+shape = SubResource("RectangleShape2D_vv2sx")
+
+[node name="TopWall" type="StaticBody2D" parent="Walls"]
+
+[node name="ColorRect" type="ColorRect" parent="Walls/TopWall"]
+offset_right = 1190.0
+offset_bottom = 36.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
+position = Vector2(594.5, 18)
+shape = SubResource("RectangleShape2D_gep5v")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls"]
+position = Vector2(1, 612)
+
+[node name="ColorRect" type="ColorRect" parent="Walls/BottomWall"]
+offset_right = 1190.0
+offset_bottom = 36.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
+position = Vector2(594.5, 18)
+shape = SubResource("RectangleShape2D_gep5v")
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="DoorTop" type="Area2D" parent="Doors"]
+position = Vector2(590, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorTop"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_tgvtw")
+
+[node name="DoorLeft" type="Area2D" parent="Doors"]
+position = Vector2(59, 321)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorLeft"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_57uou")
+
+[node name="DoorBottom" type="Area2D" parent="Doors"]
+position = Vector2(596, 591)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorBottom"]
+position = Vector2(4.5, 8)
+shape = SubResource("RectangleShape2D_wnfuy")
+
+[node name="DoorRight" type="Area2D" parent="Doors"]
+position = Vector2(1135, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorRight"]
+position = Vector2(3, -1.5)
+shape = SubResource("RectangleShape2D_p3vlm")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 235.0
+offset_top = 153.0
+offset_right = 275.0
+offset_bottom = 176.0
+text = "Normal 1"
