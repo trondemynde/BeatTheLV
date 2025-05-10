@@ -2,7 +2,7 @@ class_name DungeonGenerator
 extends Node
 
 const ROOM_SIZE := Vector2(1152, 648)
-const MAX_ROOMS := 10
+const MAX_ROOMS := 20
 const MAX_ITERATIONS := 5000  # Very high to guarantee placement
 const MIN_SPACING := ROOM_SIZE * 1.01  # Just 1% buffer
 
@@ -125,7 +125,6 @@ func _place_special_rooms() -> void:
 	var farthest_room := _find_farthest_room(rooms[0])
 	farthest_room.room_type = "boss"
 	
-	# Optional: Place a shop room (second farthest)
 	if rooms.size() > 2:
 		var shop_room = _find_farthest_room(rooms[0], [farthest_room])
 		shop_room.room_type = "shop"

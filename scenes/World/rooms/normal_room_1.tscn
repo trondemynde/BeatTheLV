@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbwvh4isx2bgq"]
+[gd_scene load_steps=8 format=3 uid="uid://dbwvh4isx2bgq"]
+
+[ext_resource type="Script" uid="uid://cqvq2ry668s8c" path="res://scripts/world/room.gd" id="1_gep5v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv2sx"]
 size = Vector2(38, 647)
@@ -18,7 +20,8 @@ size = Vector2(243, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3vlm"]
 size = Vector2(26, 151)
 
-[node name="normal_room_1" type="Node2D"]
+[node name="normal_room_1" type="Node2D" groups=["rooms"]]
+script = ExtResource("1_gep5v")
 
 [node name="Floor" type="Node2D" parent="."]
 
@@ -92,12 +95,26 @@ position = Vector2(590, 50)
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_tgvtw")
 
+[node name="ColorRect" type="ColorRect" parent="Doors/DoorTop"]
+offset_left = -105.0
+offset_top = -12.0
+offset_right = 122.0
+offset_bottom = 10.0
+color = Color(0.492984, 0.358566, 0.293103, 1)
+
 [node name="DoorLeft" type="Area2D" parent="Doors"]
 position = Vector2(59, 321)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorLeft"]
 position = Vector2(-5, -1)
 shape = SubResource("RectangleShape2D_57uou")
+
+[node name="ColorRect" type="ColorRect" parent="Doors/DoorLeft"]
+offset_left = -18.0
+offset_top = -95.0
+offset_right = 8.0
+offset_bottom = 92.0
+color = Color(0.494118, 0.356863, 0.294118, 1)
 
 [node name="DoorBottom" type="Area2D" parent="Doors"]
 position = Vector2(596, 591)
@@ -106,12 +123,26 @@ position = Vector2(596, 591)
 position = Vector2(4.5, 8)
 shape = SubResource("RectangleShape2D_wnfuy")
 
+[node name="ColorRect2" type="ColorRect" parent="Doors/DoorBottom"]
+offset_left = -111.0
+offset_top = -3.0
+offset_right = 116.0
+offset_bottom = 19.0
+color = Color(0.492984, 0.358566, 0.293103, 1)
+
 [node name="DoorRight" type="Area2D" parent="Doors"]
 position = Vector2(1135, 325)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/DoorRight"]
 position = Vector2(3, -1.5)
 shape = SubResource("RectangleShape2D_p3vlm")
+
+[node name="ColorRect2" type="ColorRect" parent="Doors/DoorRight"]
+offset_left = -8.0
+offset_top = -109.0
+offset_right = 18.0
+offset_bottom = 78.0
+color = Color(0.494118, 0.356863, 0.294118, 1)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 235.0

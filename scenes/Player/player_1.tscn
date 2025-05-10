@@ -27,3 +27,5 @@ texture = SubResource("CanvasTexture_rf38d")
 position = Vector2(-2.38419e-07, -23.5)
 scale = Vector2(20, -11)
 texture = SubResource("CanvasTexture_rf38d")
+
+[node name="Camera2D" type="Camera2D" parent="."]

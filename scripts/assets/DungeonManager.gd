@@ -1,11 +1,10 @@
-# dungeon_manager.gd
 extends Node
 
 @export var room_scenes: Dictionary = {
 	"normal": preload("res://scenes/World/rooms/normal_room_1.tscn"),
-	"start": preload("res://scenes/World/rooms/normal_room_1.tscn"),
-	"boss": preload("res://scenes/World/rooms/normal_room_1.tscn"),
-	"shop": preload("res://scenes/World/rooms/normal_room_1.tscn")
+	"start": preload("res://scenes/World/rooms/start_room_1.tscn"),
+	"boss": preload("res://scenes/World/rooms/boss_room_1.tscn"),
+	"shop": preload("res://scenes/World/rooms/shop_room_1.tscn")
 	# Add other room types
 }
 

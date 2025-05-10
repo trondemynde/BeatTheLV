@@ -1,21 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://brrwnvpjbgv7f"]
 
-[ext_resource type="Script" uid="uid://clj44ixra8hx0" path="res://DungeonGenerator.gd" id="1_jsv78"]
+[ext_resource type="Script" uid="uid://clj44ixra8hx0" path="res://scripts/assets/DungeonGenerator.gd" id="1_jsv78"]
 [ext_resource type="PackedScene" uid="uid://drtjf5vwgkwu" path="res://scenes/Player/player_1.tscn" id="1_tsjjh"]
 [ext_resource type="Script" uid="uid://c3u35af5kr2lh" path="res://scripts/world/main.gd" id="1_yqmja"]
-[ext_resource type="Script" uid="uid://df1xi17djb82c" path="res://DungeonManager.gd" id="3_jsv78"]
+[ext_resource type="Script" uid="uid://df1xi17djb82c" path="res://scripts/assets/DungeonManager.gd" id="3_jsv78"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_yqmja")
 
 [node name="Player1" parent="." instance=ExtResource("1_tsjjh")]
 top_level = true
-position = Vector2(553, 337)
+position = Vector2(595, 325)
 collision_mask = 62
-
-[node name="Camera2D" type="Camera2D" parent="Player1"]
-position = Vector2(21, -13)
-position_smoothing_enabled = true
 
 [node name="Dungeon" type="Node2D" parent="."]
 
