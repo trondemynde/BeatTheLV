@@ -9,6 +9,9 @@ func _physics_process(delta):
 	position += direction * speed * delta
 
 func _on_body_entered(body):
-	if body.is_in_group("enemies"):
+	print("hit")
+	if body.is_in_group("Wall"):
+		queue_free() 
+	elif body.is_in_group("enemies"):
 		body.take_damage(damage)
-	queue_free() 
+		queue_free()

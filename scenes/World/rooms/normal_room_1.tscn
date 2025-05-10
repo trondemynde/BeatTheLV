@@ -31,7 +31,9 @@ color = Color(0.235919, 0.362092, 0.496403, 1)
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="LeftWall" type="StaticBody2D" parent="Walls"]
+[node name="LeftWall" type="StaticBody2D" parent="Walls" groups=["Wall"]]
+collision_layer = 8
+collision_mask = 6
 
 [node name="ColorRect" type="ColorRect" parent="Walls/LeftWall"]
 offset_right = 40.0
@@ -42,8 +44,10 @@ color = Color(0.450648, 0.450648, 0.450648, 1)
 position = Vector2(20, 323.5)
 shape = SubResource("RectangleShape2D_vv2sx")
 
-[node name="RightWall" type="StaticBody2D" parent="Walls"]
+[node name="RightWall" type="StaticBody2D" parent="Walls" groups=["Wall"]]
 position = Vector2(1152, 0)
+collision_layer = 8
+collision_mask = 6
 
 [node name="ColorRect" type="ColorRect" parent="Walls/RightWall"]
 offset_right = 40.0
@@ -54,7 +58,9 @@ color = Color(0.450648, 0.450648, 0.450648, 1)
 position = Vector2(20, 323.5)
 shape = SubResource("RectangleShape2D_vv2sx")
 
-[node name="TopWall" type="StaticBody2D" parent="Walls"]
+[node name="TopWall" type="StaticBody2D" parent="Walls" groups=["Wall"]]
+collision_layer = 8
+collision_mask = 6
 
 [node name="ColorRect" type="ColorRect" parent="Walls/TopWall"]
 offset_right = 1190.0
@@ -64,8 +70,10 @@ offset_bottom = 36.0
 position = Vector2(594.5, 18)
 shape = SubResource("RectangleShape2D_gep5v")
 
-[node name="BottomWall" type="StaticBody2D" parent="Walls"]
+[node name="BottomWall" type="StaticBody2D" parent="Walls" groups=["Wall"]]
 position = Vector2(1, 612)
+collision_layer = 8
+collision_mask = 6
 
 [node name="ColorRect" type="ColorRect" parent="Walls/BottomWall"]
 offset_right = 1190.0

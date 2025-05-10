@@ -11,7 +11,7 @@ script = ExtResource("1_yqmja")
 [node name="Player1" parent="." instance=ExtResource("1_tsjjh")]
 top_level = true
 position = Vector2(553, 337)
-collision_mask = 15
+collision_mask = 62
 
 [node name="Camera2D" type="Camera2D" parent="Player1"]
 position = Vector2(21, -13)

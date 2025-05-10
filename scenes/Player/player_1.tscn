@@ -10,6 +10,7 @@ height = 56.0
 [sub_resource type="CanvasTexture" id="CanvasTexture_rf38d"]
 
 [node name="Player1" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 30
 script = ExtResource("1_4hr2b")
 bullet_scene = ExtResource("2_yh5ok")
 
