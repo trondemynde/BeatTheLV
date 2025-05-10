@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://mn4ltjwu2j0g"]
+
+[ext_resource type="Script" uid="uid://bh3vcw62d0t6f" path="res://scripts/enemies/enemy.gd" id="1_odkis"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pytu0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4f77a"]
+radius = 0.800492
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imsn2"]
+radius = 1.01562
+
+[node name="enemy" type="CharacterBody2D"]
+modulate = Color(0.109804, 0.360784, 1, 1)
+position = Vector2(0, -1)
+scale = Vector2(1.24923, 1.91888)
+script = ExtResource("1_odkis")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.706251, 0.000408438, 0.71337, 1)
+texture = SubResource("CanvasTexture_pytu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.568627, 0.305882, 1, 1)
+scale = Vector2(0.615764, 0.603936)
+shape = SubResource("CircleShape2D_4f77a")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.57636, 1)
+shape = SubResource("CircleShape2D_imsn2")
+
+[node name="melee" type="AnimatableBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="melee"]
+
+[node name="Area2D" type="Area2D" parent="melee/CollisionShape2D"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
