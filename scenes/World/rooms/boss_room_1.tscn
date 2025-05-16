@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dbwvh4isx2bgq" path="res://scenes/World/rooms/normal_room_1.tscn" id="1_73s83"]
 
 [node name="boss_room_1" instance=ExtResource("1_73s83")]
+room_type = 3
 
 [node name="ColorRect" parent="Floor" index="0"]
 color = Color(0.656577, 0, 0.25524, 1)

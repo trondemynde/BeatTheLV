@@ -2,12 +2,14 @@ class_name DungeonGenerator
 extends Node
 
 const ROOM_SIZE := Vector2(1152, 648)
-const MAX_ROOMS := 20
+const MAX_ROOMS := 10
 const MAX_ITERATIONS := 5000  # Very high to guarantee placement
 const MIN_SPACING := ROOM_SIZE * 1.01  # Just 1% buffer
 
 var rooms: Array[RoomData] = []
 var dungeon_map := {}
+
+var cleared_rooms := {}
 
 func generate() -> void:
 	rooms.clear()
@@ -143,3 +145,13 @@ func _find_farthest_room(from_room: RoomData, exclude: Array = []) -> RoomData:
 
 	return farthest
 	
+
+func register_room(room: Room):
+	if cleared_rooms.has(room.get_path()):
+		room.is_cleared = true
+		room.lock_doors(false)
+	else:
+		room.connect("room_cleared", _on_room_cleared.bind(room))
+
+func _on_room_cleared(room: Room):
+	cleared_rooms[room.get_path()] = true

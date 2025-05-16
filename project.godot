@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="BeatTheLV"
+run/main_scene="uid://brrwnvpjbgv7f"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1190
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
 [global_group]
 

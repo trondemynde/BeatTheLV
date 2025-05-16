@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://drtjf5vwgkwu"]
+[gd_scene load_steps=6 format=3 uid="uid://drtjf5vwgkwu"]
 
 [ext_resource type="Script" uid="uid://dei7hddwwr0pt" path="res://scripts/player/player_1.gd" id="1_4hr2b"]
 [ext_resource type="PackedScene" uid="uid://6ac1ctqvxad6" path="res://scenes/Player/PlayerBullet1.tscn" id="2_yh5ok"]
@@ -9,8 +9,13 @@ height = 56.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rf38d"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rf38d"]
+radius = 19.0
+height = 86.0
+
 [node name="Player1" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 30
+slide_on_ceiling = false
 script = ExtResource("1_4hr2b")
 bullet_scene = ExtResource("2_yh5ok")
 
@@ -29,3 +34,11 @@ scale = Vector2(20, -11)
 texture = SubResource("CanvasTexture_rf38d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HitBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_rf38d")
+debug_color = Color(0.993854, 0, 0.231285, 0.42)

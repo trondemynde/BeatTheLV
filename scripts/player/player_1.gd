@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
+
+signal health_depleted
+
 #player variables
 @export var move_speed := 300.0
 @export var dash_speed := 1200.0
 @export var dash_duration := 0.15
 @export var dash_cooldown := 0.5
+@export var health := 100.0
 
 #dash
 var is_dashing := false	
@@ -46,6 +50,18 @@ func _physics_process(delta: float) -> void:
 	var new_room = _get_current_room()
 	if new_room and new_room != current_room:
 		_transition_to_room(new_room)
+	
+	const DAMAGE_RATE = 50.0
+	var overlapping_mobs = %HitBox.get_overlapping_bodies()
+	if overlapping_mobs.size() > 0:
+		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
+		print("health:", health)
+		if health <= 0.0:
+			print("dead")
+			health_depleted.emit()
+
+
+
 
 func start_dash(direction:Vector2):
 	is_dashing = true

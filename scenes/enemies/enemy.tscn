@@ -5,15 +5,17 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_pytu0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4f77a"]
-radius = 0.800492
+radius = 1.29121
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_imsn2"]
 radius = 1.01562
 
 [node name="enemy" type="CharacterBody2D"]
 modulate = Color(0.109804, 0.360784, 1, 1)
-position = Vector2(0, -1)
-scale = Vector2(1.24923, 1.91888)
+scale = Vector2(41.525, 41.525)
+collision_layer = 2
+collision_mask = 13
+slide_on_ceiling = false
 script = ExtResource("1_odkis")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -32,6 +34,7 @@ scale = Vector2(1.57636, 1)
 shape = SubResource("CircleShape2D_imsn2")
 
 [node name="melee" type="AnimatableBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="melee"]
 

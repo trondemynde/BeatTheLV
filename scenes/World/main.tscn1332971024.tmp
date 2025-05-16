@@ -1,0 +1,108 @@
+[gd_scene load_steps=14 format=4 uid="uid://brrwnvpjbgv7f"]
+
+[ext_resource type="Script" uid="uid://clj44ixra8hx0" path="res://scripts/assets/DungeonGenerator.gd" id="1_jsv78"]
+[ext_resource type="PackedScene" uid="uid://drtjf5vwgkwu" path="res://scenes/Player/player_1.tscn" id="1_tsjjh"]
+[ext_resource type="Script" uid="uid://c3u35af5kr2lh" path="res://scripts/world/main.gd" id="1_yqmja"]
+[ext_resource type="Script" uid="uid://df1xi17djb82c" path="res://scripts/assets/DungeonManager.gd" id="3_jsv78"]
+[ext_resource type="PackedScene" uid="uid://mn4ltjwu2j0g" path="res://scenes/enemies/enemy.tscn" id="5_c5c3q"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_caxt8"]
+_data = PackedByteArray("AAADAAUAAAABAAAAYAAAAEAAAACqAQAAUklGRqIBAABXRUJQVlA4TJUBAAAvX8APEC+gpm0jqMzKf/nuxmNxaBS1bQP1AlaQZTVCe5IFmMxj/koBdAXRMf8B4O5/o2i/2ADkxrarSK89Yv+RvIdrCIB3OwLsAAwS+ecyjd+jl6PZRPSfkdu2Yez7wC5+hfzVOrkMuEEw0wNMZuLXjlFJWvB6c8DI5Tn6CaRSQ+tYHUeNq+ualUg0XhpXx9G5jn5TUvPSpnqOq3GgSX/MJBSZeOiIjSPx/pFjSzNQdH9DbAffjQuZQNnZuF8zN3LRvfw4Dn3gaP7TUBOIpaTw0HGNrkv6IZKZEMMxmo5a4xDVdklPbyfRdnRVIqEfl1mFN1vXIYog/5ydwrcOwEwECOkcR4LjAILhuEYlCXEd4amjxhWksoHXLxzNQ7u4KpHIVD0H6jPXVTclNeOBAw9d8ZhJKBLhOJbfdJ7j/DgOZAJlfxOneI7quJq8Zm7kQpYUxHSUEi7Pkc77kWoCseSEznME14H2TkMkMxHEc1TXcd7PVCUmtWbQXbJCyWQ5IrzdCAB4K1UEe8RQTzaJW3/1AOSPVgEA")
+size_override = Vector2(96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iruaj"]
+atlas = SubResource("PortableCompressedTexture2D_caxt8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7g4b"]
+atlas = SubResource("PortableCompressedTexture2D_caxt8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdae7"]
+atlas = SubResource("PortableCompressedTexture2D_caxt8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11dlv"]
+atlas = SubResource("PortableCompressedTexture2D_caxt8")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr4u3"]
+atlas = SubResource("PortableCompressedTexture2D_caxt8")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5qhk"]
+atlas = SubResource("PortableCompressedTexture2D_caxt8")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqmja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iruaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7g4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdae7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11dlv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr4u3")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_n5qhk")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_n5qhk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_yqmja")
+
+[node name="Player1" parent="." instance=ExtResource("1_tsjjh")]
+top_level = true
+position = Vector2(595, 325)
+collision_mask = 62
+
+[node name="Dungeon" type="Node2D" parent="."]
+
+[node name="DungeonGenerator" type="Node" parent="."]
+script = ExtResource("1_jsv78")
+
+[node name="DungeonManager" type="Node" parent="."]
+script = ExtResource("3_jsv78")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(587, 193)
+scale = Vector2(2.875, 2.32813)
+sprite_frames = SubResource("SpriteFrames_yqmja")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": false,
+"pending_changes": {},
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "res://assets/aesprite/droplet1flying.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "a2725ad1a4ff4486e4de45017ba9297d"
+
+[node name="enemy" parent="." instance=ExtResource("5_c5c3q")]
+position = Vector2(239, 117)

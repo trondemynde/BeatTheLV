@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbwvh4isx2bgq"]
+[gd_scene load_steps=10 format=3 uid="uid://dbwvh4isx2bgq"]
 
 [ext_resource type="Script" uid="uid://cqvq2ry668s8c" path="res://scripts/world/room.gd" id="1_gep5v"]
+[ext_resource type="PackedScene" uid="uid://mn4ltjwu2j0g" path="res://scenes/enemies/enemy.tscn" id="2_tgvtw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv2sx"]
 size = Vector2(38, 647)
@@ -20,8 +21,13 @@ size = Vector2(243, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3vlm"]
 size = Vector2(26, 151)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mvml"]
+size = Vector2(1116, 573)
+
 [node name="normal_room_1" type="Node2D" groups=["rooms"]]
 script = ExtResource("1_gep5v")
+enemy_scenes = Array[PackedScene]([ExtResource("2_tgvtw")])
+spawn_area = Rect2(611.085, 303.565, 300, 300)
 
 [node name="Floor" type="Node2D" parent="."]
 
@@ -150,3 +156,9 @@ offset_top = 153.0
 offset_right = 275.0
 offset_bottom = 176.0
 text = "Normal 1"
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(597, 325.5)
+shape = SubResource("RectangleShape2D_3mvml")
