@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cardvmd4ae0m4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m0ql6"]
+
+[node name="RoomIcons" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("CanvasTexture_m0ql6")

@@ -2,7 +2,7 @@ class_name DungeonGenerator
 extends Node
 
 const ROOM_SIZE := Vector2(1152, 648)
-const MAX_ROOMS := 10
+const MAX_ROOMS := 4
 const MAX_ITERATIONS := 5000  # Very high to guarantee placement
 const MIN_SPACING := ROOM_SIZE * 1.01  # Just 1% buffer
 

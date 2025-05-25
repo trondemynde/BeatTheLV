@@ -9,12 +9,14 @@ enum RoomType {NORMAL, START, SHOP, BOSS}
 @export var room_size := Vector2(1190, 648)
 @export var max_enemies := 5
 @export var enemy_scenes: Array[PackedScene]
+@export var boss_scene: PackedScene
 @export var spawn_area: Rect2 = Rect2(-400, -300, 800, 600)  # Area relative to room center
 
 var enemies_spawned := false
 var is_cleared := false
 var current_enemies := 0
 var doors := []
+var boss_ref = null 
 
 func _ready() -> void:
 	add_to_group("rooms")
@@ -30,7 +32,11 @@ func _ready() -> void:
 		get_node_or_null("Doors/DoorBottom")
 	]
 	$PlayerDetector.connect("body_entered", _on_player_entered)
-
+	
+	if room_type == RoomType.BOSS:
+		is_cleared = false
+	if room_type != RoomType.NORMAL:
+		is_cleared = true
 
 func _on_player_entered(body):
 	if !body.is_in_group("player") or is_cleared:

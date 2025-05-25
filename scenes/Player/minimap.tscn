@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://clgxrutkctx4x"]
+
+[ext_resource type="Script" uid="uid://b2m45d5f47hom" path="res://scripts/player/minimap.gd" id="1_7brqe"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bvjp2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_q45v3"]
+
+[node name="Minimap" type="CanvasLayer"]
+script = ExtResource("1_7brqe")
+
+[node name="Backround" type="TextureRect" parent="."]
+modulate = Color(0.393086, 0.393086, 0.393085, 0.717647)
+offset_right = 215.0
+offset_bottom = 193.0
+texture = SubResource("CanvasTexture_bvjp2")
+
+[node name="Rooms" type="Node2D" parent="."]
+
+[node name="PlayerIcon" type="Sprite2D" parent="."]
+position = Vector2(105, 97)
+
+[node name="Fog" type="TextureRect" parent="."]
+visible = false
+offset_left = 51.0
+offset_top = 54.0
+offset_right = 91.0
+offset_bottom = 94.0
+texture = SubResource("CanvasTexture_q45v3")

@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd1i7yukjbvb8"]
+[gd_scene load_steps=3 format=3 uid="uid://bd1i7yukjbvb8"]
 
 [ext_resource type="PackedScene" uid="uid://dbwvh4isx2bgq" path="res://scenes/World/rooms/normal_room_1.tscn" id="1_73s83"]
+[ext_resource type="Script" uid="uid://gqaqymqhrnts" path="res://scripts/world/boss_room.gd" id="2_cphkr"]
 
 [node name="boss_room_1" instance=ExtResource("1_73s83")]
-room_type = 3
+script = ExtResource("2_cphkr")
+enemy_scenes = Array[PackedScene]([])
+spawn_area = Rect2(-400, -300, 800, 600)
 
 [node name="ColorRect" parent="Floor" index="0"]
 color = Color(0.656577, 0, 0.25524, 1)
 
 [node name="Label" parent="." index="3"]
 text = "boss 1"
+
+[node name="BossSpawn" type="Marker2D" parent="." index="5"]
+position = Vector2(236, 325)

@@ -16,25 +16,24 @@ func _ready() -> void:
 
 
 func generate_dungeon() -> void:
+	
 	# Clear existing dungeon
 	for child in $"../Dungeon".get_children():
 		child.queue_free()
 	
 	generator.generate()
-	
+
 	# Instantiate rooms with error handling
 	for room_data in generator.rooms:
 		var room_scene = room_scenes.get(room_data.room_type, room_scenes["normal"])
 		if not room_scene:
 			push_error("Missing scene for room type: ", room_data.room_type)
 			continue
-			
+		
 		var room_instance = room_scene.instantiate()
 		room_instance.position = room_data.position
 		room_instance.name = "room_%d" % room_data.id
-		
 		$"../Dungeon".add_child(room_instance)
-		
 		# Setup doors if they exist
 		var doors_node = room_instance.get_node_or_null("Doors")
 		if doors_node:

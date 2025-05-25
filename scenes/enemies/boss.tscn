@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvfbn08xnykla"]
+
+[ext_resource type="Script" uid="uid://l1r6a0j11pgr" path="res://scripts/enemies/boss.gd" id="1_1ex25"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_utcrb"]
+radius = 41.0
+height = 150.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ex25"]
+radius = 136.132
+
+[node name="Boss" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_1ex25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_utcrb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -44.0
+offset_top = -77.0
+offset_right = 40.0
+offset_bottom = 81.0
+color = Color(0.596466, 0, 0.180521, 1)
+
+[node name="PhaseTimer" type="Timer" parent="."]
+
+[node name="AttackPatterns" type="Node" parent="."]
+
+[node name="ChargeAttack" type="Timer" parent="AttackPatterns"]
+
+[node name="BulletCircle" type="Timer" parent="AttackPatterns"]
+
+[node name="SlamAttack" type="Timer" parent="AttackPatterns"]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_1ex25")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -150.0
+offset_top = -134.0
+offset_right = 150.0
+offset_bottom = -96.0
+value = 100.0
+show_percentage = false
+
+[connection signal="timeout" from="PhaseTimer" to="." method="_on_phase_timer_timeout"]
+[connection signal="timeout" from="AttackPatterns/ChargeAttack" to="." method="_on_charge_attack_timeout"]
+[connection signal="timeout" from="AttackPatterns/BulletCircle" to="." method="_on_bullet_circle_timeout"]
+[connection signal="timeout" from="AttackPatterns/SlamAttack" to="." method="_on_slam_attack_timeout"]

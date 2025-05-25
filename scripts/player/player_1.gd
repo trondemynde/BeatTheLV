@@ -59,6 +59,7 @@ func _physics_process(delta: float) -> void:
 		if health <= 0.0:
 			print("dead")
 			health_depleted.emit()
+	var room_pos = (global_position / Vector2(1224, 720)).floor()
 
 
 
