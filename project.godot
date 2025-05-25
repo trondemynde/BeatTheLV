@@ -10,13 +10,18 @@ config_version=5
 
 [application]
 
-config/name="BeatTheLV"
+config/name="BeatTheLV MAIN"
+run/main_scene="uid://brrwnvpjbgv7f"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1190
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
 [global_group]
 
@@ -65,3 +70,7 @@ dash={
 2d_physics/layer_3="bullets"
 2d_physics/layer_4="walls"
 2d_physics/layer_5="doors"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

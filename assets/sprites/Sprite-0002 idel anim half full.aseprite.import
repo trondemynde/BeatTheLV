@@ -1,0 +1,21 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split"
+type="PackedDataContainer"
+uid="uid://bacnhoca38n0y"
+path="res://.godot/imported/Sprite-0002 idel anim half full.aseprite-ca93c163292ba6e49b7d33df3b3af4ab.res"
+
+[deps]
+
+source_file="res://assets/sprites/Sprite-0002 idel anim half full.aseprite"
+dest_files=["res://.godot/imported/Sprite-0002 idel anim half full.aseprite-ca93c163292ba6e49b7d33df3b3af4ab.res"]
+
+[params]
+
+layer/exclude_layers_pattern=""
+layer/only_visible_layers=false
+sheet/sheet_type="packed"
+sheet/sheet_columns=12
+sheet/frame_padding=0
+animation/round_fps=true
+output/layers_resources_folder="res://assets"

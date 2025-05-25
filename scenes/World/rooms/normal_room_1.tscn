@@ -1,36 +1,137 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbwvh4isx2bgq"]
+[gd_scene load_steps=36 format=4 uid="uid://dbwvh4isx2bgq"]
 
 [ext_resource type="Script" uid="uid://cqvq2ry668s8c" path="res://scripts/world/room.gd" id="1_gep5v"]
+[ext_resource type="PackedScene" uid="uid://bdv5mku8iuu4r" path="res://scenes/enemies/enemy.tscn" id="2_11vwu"]
+[ext_resource type="Texture2D" uid="uid://b2hppen6fplqb" path="res://assets/images/Sprite-0001 MAIN floor SVG.svg" id="2_wnfuy"]
+[ext_resource type="Texture2D" uid="uid://ddkaxsyetixix" path="res://assets/images/Sprite-0001 wall svg.svg" id="3_p3vlm"]
+[ext_resource type="Texture2D" uid="uid://iegy6cqp2vef" path="res://assets/images/Sprite-0001 wall w shadow svg.svg" id="4_3mvml"]
+[ext_resource type="Texture2D" uid="uid://oladfc3sdnxs" path="res://assets/images/Sprite-0001 wall w shadow upsidedown svg.svg" id="5_p3vlm"]
+[ext_resource type="Texture2D" uid="uid://yg74whj6tomo" path="res://assets/images/Sprite-0001 door x.svg" id="6_3mvml"]
+[ext_resource type="Texture2D" uid="uid://dqimt0d7dc3t2" path="res://assets/images/Sprite-0001 door svg.svg" id="7_sm56g"]
+[ext_resource type="Texture2D" uid="uid://cghdlq1trrfgh" path="res://assets/images/Sprite-0001 door x2 svg.svg" id="8_o87da"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4bi6"]
+texture = ExtResource("2_wnfuy")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hgxws"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_e4bi6")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv2sx"]
 size = Vector2(38, 647)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11vwu"]
+texture = ExtResource("3_p3vlm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0kchp"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_11vwu")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkelt"]
+texture = ExtResource("3_p3vlm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ulgfv"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_lkelt")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gep5v"]
 size = Vector2(1185, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p3vlm"]
+texture = ExtResource("4_3mvml")
+texture_region_size = Vector2i(32, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3mvml"]
+tile_size = Vector2i(32, 40)
+sources/0 = SubResource("TileSetAtlasSource_p3vlm")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o87da"]
+texture = ExtResource("5_p3vlm")
+texture_region_size = Vector2i(32, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_11vwu"]
+tile_size = Vector2i(32, 40)
+sources/0 = SubResource("TileSetAtlasSource_o87da")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgvtw"]
 size = Vector2(225, 20)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0kchp"]
+texture = ExtResource("6_3mvml")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lkelt"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_0kchp")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57uou"]
 size = Vector2(26, 182)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulgfv"]
+texture = ExtResource("7_sm56g")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1x2q8"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_ulgfv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnfuy"]
 size = Vector2(243, 22)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1x2q8"]
+texture = ExtResource("8_o87da")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_e4bi6"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_1x2q8")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3vlm"]
 size = Vector2(26, 151)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgxws"]
+texture = ExtResource("7_sm56g")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8eobe"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_hgxws")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o87da"]
+size = Vector2(1156, 625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11vwu"]
+size = Vector2(398.305, 200.847)
+
 [node name="normal_room_1" type="Node2D" groups=["rooms"]]
 script = ExtResource("1_gep5v")
+enemy_scenes = Array[PackedScene]([ExtResource("2_11vwu")])
 
 [node name="Floor" type="Node2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Floor"]
-offset_left = 37.0
-offset_top = 32.0
-offset_right = 1154.0
-offset_bottom = 618.0
-color = Color(0.235919, 0.362092, 0.496403, 1)
+[node name="TileMapLayer" type="TileMapLayer" parent="Floor"]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAABAAMAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_hgxws")
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -38,53 +139,51 @@ color = Color(0.235919, 0.362092, 0.496403, 1)
 collision_layer = 8
 collision_mask = 6
 
-[node name="ColorRect" type="ColorRect" parent="Walls/LeftWall"]
-offset_right = 40.0
-offset_bottom = 646.0
-color = Color(0.450648, 0.450648, 0.450648, 1)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall"]
 position = Vector2(20, 323.5)
 shape = SubResource("RectangleShape2D_vv2sx")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Walls/LeftWall"]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA8AAAAAAAAAAAAAABAAAAAAAAAAAAAAABEAAAAAAAAAAAAAABIAAAAAAAAAAAAAABMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_0kchp")
 
 [node name="RightWall" type="StaticBody2D" parent="Walls" groups=["Wall"]]
 position = Vector2(1152, 0)
 collision_layer = 8
 collision_mask = 6
 
-[node name="ColorRect" type="ColorRect" parent="Walls/RightWall"]
-offset_right = 40.0
-offset_bottom = 646.0
-color = Color(0.450648, 0.450648, 0.450648, 1)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
 position = Vector2(20, 323.5)
 shape = SubResource("RectangleShape2D_vv2sx")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Walls/RightWall"]
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA8AAAAAAAAAAAAAABAAAAAAAAAAAAAAABEAAAAAAAAAAAAAABIAAAAAAAAAAAAAABMAAAAAAAAAAAAAAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_ulgfv")
 
 [node name="TopWall" type="StaticBody2D" parent="Walls" groups=["Wall"]]
 collision_layer = 8
 collision_mask = 6
 
-[node name="ColorRect" type="ColorRect" parent="Walls/TopWall"]
-offset_right = 1190.0
-offset_bottom = 36.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
 position = Vector2(594.5, 18)
 shape = SubResource("RectangleShape2D_gep5v")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Walls/TopWall"]
+tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_3mvml")
 
 [node name="BottomWall" type="StaticBody2D" parent="Walls" groups=["Wall"]]
 position = Vector2(1, 612)
 collision_layer = 8
 collision_mask = 6
 
-[node name="ColorRect" type="ColorRect" parent="Walls/BottomWall"]
-offset_right = 1190.0
-offset_bottom = 36.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
 position = Vector2(594.5, 18)
 shape = SubResource("RectangleShape2D_gep5v")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Walls/BottomWall"]
+tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_11vwu")
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -95,12 +194,9 @@ position = Vector2(590, 50)
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_tgvtw")
 
-[node name="ColorRect" type="ColorRect" parent="Doors/DoorTop"]
-offset_left = -105.0
-offset_top = -12.0
-offset_right = 122.0
-offset_bottom = 10.0
-color = Color(0.492984, 0.358566, 0.293103, 1)
+[node name="TileMapLayer" type="TileMapLayer" parent="Doors/DoorTop"]
+tile_map_data = PackedByteArray("AAD8////AAAAAAAAAAD9////AAABAAAAAAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAACAAAAAAA=")
+tile_set = SubResource("TileSet_lkelt")
 
 [node name="DoorLeft" type="Area2D" parent="Doors"]
 position = Vector2(59, 321)
@@ -109,12 +205,9 @@ position = Vector2(59, 321)
 position = Vector2(-5, -1)
 shape = SubResource("RectangleShape2D_57uou")
 
-[node name="ColorRect" type="ColorRect" parent="Doors/DoorLeft"]
-offset_left = -18.0
-offset_top = -95.0
-offset_right = 8.0
-offset_bottom = 92.0
-color = Color(0.494118, 0.356863, 0.294118, 1)
+[node name="TileMapLayer" type="TileMapLayer" parent="Doors/DoorLeft"]
+tile_map_data = PackedByteArray("AAD///3/AAAAAAAAAAD//wIAAAACAAAAAAD///7/AAABAAAAAAD/////AAABAAAAAAD//wAAAAABAAAAAAD//wEAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_1x2q8")
 
 [node name="DoorBottom" type="Area2D" parent="Doors"]
 position = Vector2(596, 591)
@@ -123,12 +216,9 @@ position = Vector2(596, 591)
 position = Vector2(4.5, 8)
 shape = SubResource("RectangleShape2D_wnfuy")
 
-[node name="ColorRect2" type="ColorRect" parent="Doors/DoorBottom"]
-offset_left = -111.0
-offset_top = -3.0
-offset_right = 116.0
-offset_bottom = 19.0
-color = Color(0.492984, 0.358566, 0.293103, 1)
+[node name="TileMapLayer" type="TileMapLayer" parent="Doors/DoorBottom"]
+tile_map_data = PackedByteArray("AAD8/wAAAAAAAAAAAAADAAAAAAACAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_e4bi6")
 
 [node name="DoorRight" type="Area2D" parent="Doors"]
 position = Vector2(1135, 325)
@@ -137,12 +227,9 @@ position = Vector2(1135, 325)
 position = Vector2(3, -1.5)
 shape = SubResource("RectangleShape2D_p3vlm")
 
-[node name="ColorRect2" type="ColorRect" parent="Doors/DoorRight"]
-offset_left = -8.0
-offset_top = -109.0
-offset_right = 18.0
-offset_bottom = 78.0
-color = Color(0.494118, 0.356863, 0.294118, 1)
+[node name="TileMapLayer" type="TileMapLayer" parent="Doors/DoorRight"]
+tile_map_data = PackedByteArray("AAAAAAIAAAACAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAABAAAAAAAAAP//AAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_8eobe")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 235.0
@@ -150,3 +237,22 @@ offset_top = 153.0
 offset_right = 275.0
 offset_bottom = 176.0
 text = "Normal 1"
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+position = Vector2(596, 322)
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(-2, 4.5)
+shape = SubResource("RectangleShape2D_o87da")
+
+[node name="SpawnOrigin" type="Node2D" parent="."]
+visible = false
+
+[node name="SpawnAreaVisualizer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnAreaVisualizer"]
+position = Vector2(596, 321)
+scale = Vector2(2.36, 2.36)
+shape = SubResource("RectangleShape2D_11vwu")
+debug_color = Color(0.675494, 0.0376694, 0.279137, 0.42)

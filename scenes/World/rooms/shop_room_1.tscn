@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdos3bhdg5f1"]
+[gd_scene load_steps=3 format=3 uid="uid://bdos3bhdg5f1"]
 
 [ext_resource type="PackedScene" uid="uid://dbwvh4isx2bgq" path="res://scenes/World/rooms/normal_room_1.tscn" id="1_cn5rh"]
 
-[node name="shop_room_1" instance=ExtResource("1_cn5rh")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yacnv"]
+size = Vector2(1116, 573)
 
-[node name="ColorRect" parent="Floor" index="0"]
-color = Color(0.428422, 0.341796, 0, 1)
+[node name="shop_room_1" instance=ExtResource("1_cn5rh")]
 
 [node name="Label" parent="." index="3"]
 text = "Shop 1"
+
+[node name="CollisionShape2D" parent="PlayerDetector" index="0"]
+shape = SubResource("RectangleShape2D_yacnv")

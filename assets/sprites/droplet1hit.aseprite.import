@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://fsuj0ukxihow"
+path="res://.godot/imported/droplet1hit.aseprite-48232edc33212b8fbbf81d82249cda06.res"
+
+[deps]
+
+source_file="res://assets/sprites/droplet1hit.aseprite"
+dest_files=["res://.godot/imported/droplet1hit.aseprite-48232edc33212b8fbbf81d82249cda06.res"]
+
+[params]
+

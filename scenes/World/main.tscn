@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://brrwnvpjbgv7f"]
+[gd_scene load_steps=6 format=3 uid="uid://brrwnvpjbgv7f"]
 
 [ext_resource type="Script" uid="uid://clj44ixra8hx0" path="res://scripts/assets/DungeonGenerator.gd" id="1_jsv78"]
 [ext_resource type="PackedScene" uid="uid://drtjf5vwgkwu" path="res://scenes/Player/player_1.tscn" id="1_tsjjh"]
 [ext_resource type="Script" uid="uid://c3u35af5kr2lh" path="res://scripts/world/main.gd" id="1_yqmja"]
 [ext_resource type="Script" uid="uid://df1xi17djb82c" path="res://scripts/assets/DungeonManager.gd" id="3_jsv78"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5c3q"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_yqmja")
@@ -20,3 +22,20 @@ script = ExtResource("1_jsv78")
 
 [node name="DungeonManager" type="Node" parent="."]
 script = ExtResource("3_jsv78")
+
+[node name="bullet" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c5c3q")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "res://assets/sprites/droplet1.aseprite"
+}

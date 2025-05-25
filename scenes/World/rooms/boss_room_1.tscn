@@ -1,11 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd1i7yukjbvb8"]
+[gd_scene load_steps=6 format=4 uid="uid://bd1i7yukjbvb8"]
 
 [ext_resource type="PackedScene" uid="uid://dbwvh4isx2bgq" path="res://scenes/World/rooms/normal_room_1.tscn" id="1_73s83"]
+[ext_resource type="Texture2D" uid="uid://ch40qrndd1wpd" path="res://assets/images/Sprite-0002 boss room floor v6 SVG.svg" id="7_otujh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cphkr"]
+texture = ExtResource("7_otujh")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tufy5"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_cphkr")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cphkr"]
+size = Vector2(1116, 573)
 
 [node name="boss_room_1" instance=ExtResource("1_73s83")]
 
-[node name="ColorRect" parent="Floor" index="0"]
-color = Color(0.656577, 0, 0.25524, 1)
+[node name="TileMapLayer2" type="TileMapLayer" parent="Floor" index="1"]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAACAAMAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tufy5")
 
 [node name="Label" parent="." index="3"]
 text = "boss 1"
+
+[node name="CollisionShape2D" parent="PlayerDetector" index="0"]
+shape = SubResource("RectangleShape2D_cphkr")

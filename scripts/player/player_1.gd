@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var dash_speed := 1200.0
 @export var dash_duration := 0.15
 @export var dash_cooldown := 0.5
-
+@onready var sprite := $AnimatedSprite2D
 #dash
 var is_dashing := false	
 var can_dash := true
@@ -28,9 +28,11 @@ func _ready():
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 3.0
 	camera.limit_smoothed = true
+	$AnimatedSprite2D.play("default_1")
+	#$AnimatedSprite2D.flip_h = true
 	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	if Input.is_action_just_pressed("dash"):
@@ -47,6 +49,15 @@ func _physics_process(delta: float) -> void:
 	if new_room and new_room != current_room:
 		_transition_to_room(new_room)
 
+#	movement direction
+	if input_dir.x != 0:
+		sprite.flip_h = input_dir.x < 0
+
+	#if input_dir.length() > 0: #for animations
+		#sprite.play("run")
+	#else:
+		#sprite.play("idle")
+
 func start_dash(direction:Vector2):
 	is_dashing = true
 	can_dash = false
@@ -59,9 +70,19 @@ func start_dash(direction:Vector2):
 	await  get_tree().create_timer(dash_cooldown).timeout
 	can_dash = true	
 
+#func flip_player(event): #input nussib muidu tootab
+#	if event.is_action_pressed("move_left"):
+#		$AnimatedSprite2D.flip_h = true
+#		if event.is_action_released("move_left"):
+#			$AnimatedSprite2D.flip_h = false
+#
+#func flip_player1(direction):
+#	if direction.x < 0:
+#		$AnimatedSprite2D.flip_h = true
+#	elif direction.x > 0:
+#		$AnimatedSprite2D.flip_h = false
 
-
-func _process(delta):
+func _process(_delta):
 	add_to_group("player")
 #	camera controls
 	camera.zoom = Vector2(1,1)

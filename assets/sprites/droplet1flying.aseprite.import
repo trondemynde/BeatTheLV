@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://df0nh7vawiy66"
+path="res://.godot/imported/droplet1flying.aseprite-4dc329729aad6a3c0e393adc7324a23a.res"
+
+[deps]
+
+source_file="res://assets/sprites/droplet1flying.aseprite"
+dest_files=["res://.godot/imported/droplet1flying.aseprite-4dc329729aad6a3c0e393adc7324a23a.res"]
+
+[params]
+
